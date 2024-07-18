@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+:root {
+    --primary-color: #8490ff;
+    --secondary-color: #212121;
+    --bg: #fff;
+    --text-color: #333;
+    --bg-gray: #f2f2f2;
+    --header-green-color: #36ed;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.navbar {
+    background-color:#333;
+    overflow: hidden;
+  }
+
+  span{
+    background-color:white;
+    margin-top: 2px;
+  }
+  .icon{
+    transform: rotate(90deg)
+  }
+
+  .navbar a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+  }
+  
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+.staticnav a{
+    text-decoration: none;
+    color: #000;
+  }
+.staticnav{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 2px;
+    width:100px;
+    position: fixed;
+    top:500px;
+    z-index: 1;     
+  }
+  
+  /* Navigation bar for responsive design */
+  .navbar a.icon {
+    display: none;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .navbar a:not(:first-child) {display: none;}
+    .navbar a.icon {
+      float: right;
+      display: block;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .navbar.responsive {position: relative;}
+    .navbar.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .navbar.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .staticnav{
+        display: none;
+    }
+  }
+/* Content css */
+
+.school-img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.img-container {
+    position: relative;
+}
+
+.img-title {
+    position: absolute;
+    top:24%;
+    left:48.5%;
+    transform: translate(-50%, -50%);
+    color:#0056b3;
+    padding: 1rem 1rem;
+    /* text-align: center; */
+    border-radius: 0.5rem;
+    animation: img-blink 2s infinite alternate;
+}
+
+#vision {
+    padding: 4rem 0;
+    background-color: rgb(200,150,100);
+}
+
+#vision h2 {
+    text-align: center;
+    color: var(--bg);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+#vision p {
+    text-align: center;
+    color: var(--secondary-color);
+    font-size: 1.125rem;
+}
+
+.main-notice-section {
+    background-color: var(--bg);
+    padding: 4rem 0;
+    margin-left: 3rem;
+    overflow: auto;
+}
+
+.notice-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.notice-bord,
+.event-card {
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+.notice-bord {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notice-bord h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    margin-left: 5rem;
+}
+
+.notice-bord li {
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    list-style: none;
+    cursor: pointer;
+}
+
+.notice-bord li img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.notice-bord li p {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.event-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event-card .event-heading {
+    color: var(--header-green-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.event {
+    width: 50%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease forwards;
+    transition: transform 0.3s ease, 
+                  box-shadow 0.3s ease, 
+                  background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.event:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #1bf346;
+    color: #fff;
+}
+
+.event h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.event p {
+    margin-bottom: 0.5rem;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .notice-container {
+        flex-direction: column;
+    }
+
+    .notice-bord,
+    .event-card {
+        width: calc(100% - 20px);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .event-card {
+        margin-top: 2rem;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--secondary-color);
+    color: #fff;
+    height: 10vh;
+}
+
+
+
+.aboutus-heading {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.subheading {
+    color: #000;
+}
+
+
+#about-us-section {
+    background: rgb(28, 225, 97);
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    padding-bottom: 20px;
+    border: 3px solid rgb(28, 225, 97);
+    border-radius: 5px;
+}
+
+.about-us-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.subheading {
+    color: #000;
+}
+
+.about-us-container p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: black;
+    text-align: left;
+}
+
+.about-us-container p:first-of-type {
+    margin-top: 0;
+}
+
+.about-us-container p:last-of-type {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .aboutus-heading {
+        font-size: 2rem;
+    }
+
+    .about-us-container p {
+        font-size: 1rem;
+    }
+}
+
+.our-school-map {
+    text-align: center;
+}
+
+
+.location-heading {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .location-heading {
+        font-size: 2rem;
+    }
+
+    .our-school-map iframe {
+        width: 90%;
+        max-width: 100%;
+        height: 300px;
+        margin: 0 auto;
+    }
+}
+
+.new-text {
+    color: red;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}
+.container{
+    width: 100%;
+}
+
+.contact-form-heading {
+    color: #007bff;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+#contact-form h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}

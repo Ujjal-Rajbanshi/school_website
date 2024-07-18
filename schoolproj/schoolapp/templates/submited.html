@@ -1,0 +1,18 @@
+{% load static %}
+{% block title %}<title>Pannel</title>{% endblock title %}
+<link rel="stylesheet" href="{% static 'css/submit.css' %}">
+
+{% block content %}
+<br>
+{% for display in display %}
+<div class="card">
+    <h2>Name: <br>{{display.full_name}}</h2>
+    <p class="paragraph"><b>Phone:<br>{{display.phone}}</b></p>
+    <p class="paragraph"><b>Email:<br>{{display.email}}</b></p>
+    <details>
+        <summary>Read Message</summary>
+    <p style="background-color: cornflowerblue;color: #fff;padding:10px;border-radius: 5px;">{{display.message}}</p>
+    </details>
+</div>
+{% endfor %}
+{% endblock content %}
